@@ -1,0 +1,139 @@
+/* -------------------------------------------------------
+   GLOBAL RESET
+------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: Consolas, monospace;
+  color: #ffffff;
+  background: url("/assets/Background.png") center/cover no-repeat fixed;
+  text-shadow: 0 0 10px rgba(255,255,255,0.25);
+  overflow-x: hidden;
+}
+
+/* -------------------------------------------------------
+   NAVBAR
+------------------------------------------------------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 14px 0;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1350px;
+  margin: auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 0 8px rgba(255,255,255,0.4);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(0,140,255,0.7);
+}
+
+/* -------------------------------------------------------
+   MOBILE NAVBAR
+------------------------------------------------------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .desktop-only { display: none; }
+  .hamburger { display: flex; }
+}
+
+/* -------------------------------------------------------
+   ORB GLOW BACKGROUND
+------------------------------------------------------- */
+.orbGlow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 55%, rgba(0,140,255,0.25), transparent 70%);
+  mix-blend-mode: screen;
+  animation: orbPulse 5s ease-in-out infinite;
+}
+
+@keyframes orbPulse {
+  0% { opacity: .20; }
+  50% { opacity: .45; }
+  100% { opacity: .20; }
+}
+
+/* -------------------------------------------------------
+   FOOTER
+------------------------------------------------------- */
+footer {
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  opacity: .55;
+}

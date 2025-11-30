@@ -1,0 +1,19 @@
+.page-wrapper {
+  min-height: 100vh;
+  padding-top: 120px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  padding: 40px;
+}
+
+.page-title {
+  font-size: clamp(32px, 5vw, 60px);
+  margin-bottom: 20px;
+}
+
+.page-sub {
+  font-size: clamp(18px, 3vw, 28px);
+  opacity: .85;
+  line-height: 1.6;
+}

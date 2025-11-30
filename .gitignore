@@ -1,0 +1,31 @@
+# ---- PHP project ignores ----
+vendor/
+composer.lock
+
+# ---- Environment & secrets ----
+.env
+config.php
+admin/api/db.php
+
+# ---- System files ----
+.DS_Store
+Thumbs.db
+
+# ---- Logs ----
+*.log
+
+# ---- Node / frontend dependency folders ----
+node_modules/
+dist/
+build/
+
+# ---- IDE crap ----
+.vscode/
+.idea/
+*.swp
+
+# ---- cPanel files ----
+tmp/
+cache/
+backup/
+logs/
