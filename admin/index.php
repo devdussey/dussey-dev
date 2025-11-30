@@ -20,22 +20,94 @@ if (!isset($_SESSION['admin'])) {
 </div>
 
 <div class="admin-container">
-    <h2>Welcome back, Admin 👋</h2>
-    <p>Manage your workspace, projects, tasks, and more.</p>
+    <div class="intro">
+        <div>
+            <h2>Welcome back, Admin 👋</h2>
+            <p>Manage your workspace, projects, tasks, and more.</p>
+        </div>
+        <div class="quick-links">
+            <p class="muted">Quick links</p>
+            <a class="pill" href="https://github.com/" target="_blank" rel="noopener">Project GitHub</a>
+            <a class="pill" href="/projects">Public Projects</a>
+        </div>
+    </div>
 
-   <div id="dashboard">
+    <div class="dashboard-grid">
+        <section class="panel wide">
+            <div class="panel-header">
+                <div>
+                    <p class="muted">Projects</p>
+                    <h3>Active builds</h3>
+                </div>
+                <button class="btn-add" onclick="openProjectModal()">+ Add Project</button>
+            </div>
+            <div id="projectList" class="stack"></div>
+        </section>
 
-    <!-- PROJECTS SECTION -->
-    <h3>Projects</h3>
-    <button class="btn-add" onclick="openProjectModal()">+ Add Project</button>
-    <div id="projectList"></div>
+        <section class="panel">
+            <div class="panel-header">
+                <div>
+                    <p class="muted">Deployments</p>
+                    <h3>Logs</h3>
+                </div>
+            </div>
+            <div id="logList" class="stack"></div>
+        </section>
 
-    <!-- TASKS SECTION -->
-    <h3 style="margin-top:40px;">Tasks</h3>
-    <button class="btn-add" onclick="openTaskModal()">+ Add Task</button>
-    <div id="taskList"></div>
+        <section class="panel">
+            <div class="panel-header">
+                <div>
+                    <p class="muted">Project tasks</p>
+                    <h3>Tasks</h3>
+                </div>
+                <button class="btn-add" onclick="openTaskModal()">+ Add Task</button>
+            </div>
+            <div id="taskList" class="stack"></div>
+        </section>
 
-</div>
+        <section class="panel">
+            <div class="panel-header">
+                <div>
+                    <p class="muted">Team</p>
+                    <h3>Users</h3>
+                </div>
+            </div>
+            <div class="stack" id="userList"></div>
+            <form id="userForm" class="inline-form">
+                <input type="text" name="name" placeholder="Full name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <button type="submit">Add User</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="panel-header">
+                <div>
+                    <p class="muted">Public pages</p>
+                    <h3>Page Editor</h3>
+                </div>
+            </div>
+            <div id="pageList" class="stack"></div>
+            <form id="pageForm" class="inline-form">
+                <input type="text" name="title" placeholder="Page title" required>
+                <input type="text" name="slug" placeholder="Slug (e.g. /about)" required>
+                <button type="submit">Add Page</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="panel-header">
+                <div>
+                    <p class="muted">Assets</p>
+                    <h3>Photo Editor</h3>
+                </div>
+            </div>
+            <div class="stack">
+                <p class="muted">Prepare uploads, trim hero images, and manage gallery shots.</p>
+                <button class="btn-secondary" id="openPhotoEditor">Open Photo Editor</button>
+            </div>
+        </section>
+    </div>
 
 <!-- PROJECT MODAL -->
 <div id="projectModal" class="modal">
